@@ -1,12 +1,39 @@
-package ru.zappa.crud.models;
-
-import java.util.Objects;
+package com.example.CRUDPersonBDSpring.models;
 import java.util.regex.Pattern;
+//public class ProductDTO {
+//    private String name;
+//    private Double price;
+//
+//    public ProductDTO() {
+//    }
+//
+//    public ProductDTO(String name, Double price) {
+//        this.name = name;
+//        this.price = price;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public Double getPrice() {
+//        return price;
+//    }
+//
+//    public void setPrice(Double price) {
+//        this.price = price;
+//    }
+//}
+
 
 public class Person {
     private String name;
     private int id;
-    private int age;
+    private double age;
     private String phone;
     private String  birth;
     private String  gender;
@@ -26,11 +53,11 @@ public class Person {
                 '}';
     }
 
-    public Person(int age) {
+    public Person() {
         this.age = age;
     }
 
-    public Person(String name, int id, int age,String email, String phone,String birth, String gender) {
+    public Person(String name, int id, double age,String email, String phone,String birth, String gender) {
         this.setId(id);
         this.setName(name);
         this.setAge(age);
@@ -43,20 +70,18 @@ public class Person {
     public String getName() {
         return name;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) {this.name = name;}
     public int getId() {
         return id;
     }
     public void setId(int id) {
         this.id = id;
     }
-    public void setAge(int age) {
+    public void setAge(double age) {
         this.age = age;
     }
 
-    public int getAge() {
+    public double getAge() {
         return age;
     }
     public void setEmail(String email) {
@@ -82,9 +107,9 @@ public class Person {
     }
 
     public void setPhone(String phone) {
-        if (!Pattern.compile("^[0-9]{1}+-[0-9]{3}+-[0-9]{3}+-[0-9]{2}+-[0-9]{2}$").matcher(phone).matches()) {
-            throw new IllegalArgumentException("Введенный телефон не соответствует формату:+х-ххх-ххх-хх-хх");
-        }
+//        if (!Pattern.compile("^[0-9]{1}+-[0-9]{3}+-[0-9]{3}+-[0-9]{2}+-[0-9]{2}$").matcher(phone).matches()) {
+//            throw new IllegalArgumentException("Введенный телефон не соответствует формату:+х-ххх-ххх-хх-хх");
+//        }
         this.phone = phone;
     }
 
@@ -108,9 +133,6 @@ public class Person {
             default:
                 throw new IllegalArgumentException("Некорректное значение для gender, требуется male или female");
         }
-          System.out.println(gender);
+        System.out.println(gender);
     }
 }
-
-
-

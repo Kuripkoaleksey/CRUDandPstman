@@ -1,10 +1,10 @@
-package ru.zappa.crud;
+package com.example.CRUDPersonBDSpring;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CrudApplicationTests {
+class CrudPersonBdSpringApplicationTests {
 
 	@Test
 	void contextLoads() {
